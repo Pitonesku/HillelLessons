@@ -1,0 +1,5 @@
+.gradle/
+.idea/
+out/
+src/com/company/Before8/
+*.imlg
