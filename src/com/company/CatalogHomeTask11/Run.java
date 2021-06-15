@@ -1,22 +1,23 @@
 package com.company.CatalogHomeTask11;
 
+import com.company.CatalogHomeTask11.Menu.MainMenu;
+import com.company.CatalogHomeTask11.Menu.ShowDetailInformation;
+
 import java.util.Scanner;
 
 
+public class Run {
+    static public boolean doIt = true;
 
-public class Main {
-
-    public static void main (String[] args){
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-       Catalog catalog = new Catalog();
-        catalog.showTypesList();
+        Catalog catalog = new Catalog();
         MainMenu mainMenu = new MainMenu(sc, catalog);
-        mainMenu.run();
 
 
-
-      // Book book = new Book();
-
+        while (doIt) {
+            mainMenu.run();
+        }
     }
 }
 

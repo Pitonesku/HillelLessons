@@ -13,6 +13,7 @@ public class DeleteTask extends MenuItem {
     @Override
     public String getMenuItemName() {
         return "Delete task";
+    }
 
     /**
      * Удаляет задачу из списка.
@@ -26,7 +27,7 @@ public class DeleteTask extends MenuItem {
         if (userInput < 0 || userInput > taskList.length) {
             System.out.printf("Incorrect input. Try again \n");
         } else {
-            TaskList.setTaskList(deleteTask(taskList,userInput-1));
+            TaskList.setTaskList(deleteTask(taskList, userInput - 1));
             System.out.printf("Task have been deleted. \n");
         }
 
@@ -34,8 +35,9 @@ public class DeleteTask extends MenuItem {
 
     /**
      * Удаляет выбранную пользователем задачу из списка задач и возвращает новый список задач;
+     *
      * @param taskList список задач в виде массива;
-     * @param Index - индекс задачи которую необходимо удалить в массиве;
+     * @param Index    - индекс задачи которую необходимо удалить в массиве;
      * @return новый массив задач
      */
 
@@ -55,4 +57,5 @@ public class DeleteTask extends MenuItem {
         return newTaskList;
     }
 }
+
 

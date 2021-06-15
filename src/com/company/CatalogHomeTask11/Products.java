@@ -1,10 +1,7 @@
 package com.company.CatalogHomeTask11;
 
-import java.util.Scanner;
+public abstract class Products {
 
-abstract class Goods {
-
-    //  public Goods (Scanner sc){};
     private String type;
     private String name;
     private int price;
