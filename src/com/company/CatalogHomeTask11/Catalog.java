@@ -15,7 +15,7 @@ public class Catalog extends Products {
         return catalogList;
     }
 
-     Products[] catalogList = {
+    Products[] catalogList = {
             new Book("White fang", "Jack London", 1906, 232123, 123),
             new Song("Wind of change", "Scorpions", 1990, 128, 444),
             new Movie("Alien", "R. Scott", 1979, "Horor", 18, 232),
@@ -41,14 +41,12 @@ public class Catalog extends Products {
         int j = 0;
         for (int i = 0; i < catalog.length; i++) {
             if (i != index) {
-                System.out.println("Copied " + 1 + 1 + " " + catalogList[i].getType());
                 newCatalog[j] = catalog[i];
                 j++;
             }
         }
         catalogList = newCatalog;
     }
-
 
     public void showTypesList() {
         for (int i = 0; i < typesList.length; i++) {
@@ -69,12 +67,16 @@ public class Catalog extends Products {
     }
 
     public void selectedProductsList(String type) {
-        selectedProductsList = new Products[0];
-        for (Products product:
-             catalogList) {
-            if(type.equals(product.getType())) {
-                selectedProductsList = Arrays.copyOf(selectedProductsList, selectedProductsList.length+1);
-                selectedProductsList[selectedProductsList.length-1] = product;
+        if (type.equals("ALL")) {
+            selectedProductsList = catalogList;
+        } else {
+            selectedProductsList = new Products[0];
+            for (Products product :
+                    catalogList) {
+                if (type.equals(product.getType())) {
+                    selectedProductsList = Arrays.copyOf(selectedProductsList, selectedProductsList.length + 1);
+                    selectedProductsList[selectedProductsList.length - 1] = product;
+                }
             }
         }
     }

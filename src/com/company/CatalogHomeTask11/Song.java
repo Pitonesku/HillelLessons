@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Song extends Products {
 
-    public Song (String name, String singer, int yearOfProduction, int bitrate, int price) {
+    public Song(String name, String singer, int yearOfProduction, int bitrate, int price) {
         super.setType("Song");
         super.setName(name);
         this.singer = singer;
@@ -14,11 +14,10 @@ public class Song extends Products {
     }
 
     public Song(Scanner sc) {
-       // Scanner sc = new Scanner(System.in);
-        String userInput = sc.nextLine();
+        sc.nextLine();
         System.out.println("Please enter new song details. Press 0 to cancel.");
         System.out.print("Song name: ");
-        userInput = sc.nextLine();
+        String userInput = sc.nextLine();
 
         if (!userInput.equals("0")) {
             super.setType("Song");
@@ -52,11 +51,11 @@ public class Song extends Products {
     }
 
     public void showDetails() {
-        System.out.printf("Song name: %s\n", getName());
-        System.out.printf("Song singer: %s\n", getSinger());
+        System.out.printf("Song name:          %s\n", getName());
+        System.out.printf("Song singer:        %s\n", getSinger());
         System.out.printf("Year of production: %s\n", getYearOfProduction());
-        System.out.printf("Song bitrate: %d\n", getBitrate());
-        System.out.printf("Song price: %d\n", getPrice());
+        System.out.printf("Song bitrate:       %d\n", getBitrate());
+        System.out.printf("Song price:         %d uah\n", getPrice());
     }
 }
 

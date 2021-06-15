@@ -14,6 +14,7 @@ public class Book extends Products {
     }
 
     public  Book (Scanner sc) {
+        sc.nextLine();
         System.out.println("Please enter new book details. Press 0 to cancel.");
         System.out.print("Book name: ");
 
@@ -52,11 +53,11 @@ public class Book extends Products {
     }
 
     public void showDetails() {
-        System.out.printf("Book name: %s\n", getName());
-        System.out.printf("Book author: %s\n", getAuthor());
-        System.out.printf("Year of publication: %s\n", getYearOfPublication());
-        System.out.printf("Book circulation: %d\n", getCirculation());
-        System.out.printf("Book price: %d\n", getPrice());
+        System.out.printf("Book name:            %s\n", getName());
+        System.out.printf("Book author:          %s\n", getAuthor());
+        System.out.printf("Year of publication:  %s\n", getYearOfPublication());
+        System.out.printf("Book circulation:     %d\n", getCirculation());
+        System.out.printf("Book price:           %d uah\n", getPrice());
     }
 }
 

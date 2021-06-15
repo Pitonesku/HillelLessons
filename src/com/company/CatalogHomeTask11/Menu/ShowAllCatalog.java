@@ -23,8 +23,9 @@ public class ShowAllCatalog implements MenuItem {
 
     @Override
     public void run() {
+        catalog.selectedProductsList("ALL");
         catalog.showCatalog(catalog.getCatalogList());
-        subMenu = new SubMenu(sc);
+        subMenu = new SubMenu(catalog, sc);
         subMenu.run();
 
 

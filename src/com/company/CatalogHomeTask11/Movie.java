@@ -16,11 +16,10 @@ public class Movie extends Products {
 
 
     public Movie(Scanner sc) {
-        // Scanner sc = new Scanner(System.in);
-        String userInput = sc.nextLine();
+        sc.nextLine();
         System.out.println("Please enter new movie details. Press 0 to cancel.");
         System.out.print("Movie name: ");
-        userInput = sc.nextLine();
+        String userInput = sc.nextLine();
 
         if (!userInput.equals("0")) {
             super.setType("Movie");
@@ -29,8 +28,9 @@ public class Movie extends Products {
             producer = sc.nextLine();
             System.out.print("Year of production: ");
             yearOfProduction = sc.nextInt();
+            sc.nextLine();
             System.out.print("Genre: ");
-            ageRestriction = sc.nextInt();
+            genre = sc.nextLine();
             System.out.print("Age restriction: ");
             ageRestriction = sc.nextInt();
             System.out.print("Enter the price: ");
@@ -66,11 +66,11 @@ public class Movie extends Products {
     }
 
     public void showDetails() {
-        System.out.printf("Movie name: %s\n", getName());
-        System.out.printf("Movie producer: %s\n", getProducer());
+        System.out.printf("Movie name:         %s\n", getName());
+        System.out.printf("Movie producer:     %s\n", getProducer());
         System.out.printf("Year of production: %s\n", getYearOfProduction());
-        System.out.printf("Age restriction: +%d\n", getAgeRestriction());
-        System.out.printf("Movie price: %d\n", getPrice());
+        System.out.printf("Age restriction:    +%d\n", getAgeRestriction());
+        System.out.printf("Movie price:        %d uah\n", getPrice());
     }
 }
 

@@ -42,7 +42,7 @@ public class ShowSelectedProducts implements MenuItem {
         String type = catalog.getTypesList()[userInput-1];
         catalog.selectedProductsList(type);
         catalog.showCatalog(catalog.getSelectedProductsList());
-        submenu = new SubMenu(sc);
+        submenu = new SubMenu(catalog, sc);
         submenu.run();
     }
 }

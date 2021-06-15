@@ -9,6 +9,9 @@ public class MainMenu implements MenuItem {
     Catalog catalog;
     MenuItem[] mainMenu;
 
+    public MainMenu(){
+    }
+
     public MainMenu(Scanner sc, Catalog catalog) {
         this.sc = sc;
         this.catalog = catalog;
@@ -20,6 +23,7 @@ public class MainMenu implements MenuItem {
                 new Exit()
         };
     }
+
 
     @Override
     public String getName() {

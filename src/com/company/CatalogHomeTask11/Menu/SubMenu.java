@@ -1,25 +1,21 @@
 package com.company.CatalogHomeTask11.Menu;
 
 import com.company.CatalogHomeTask11.Catalog;
-import com.company.CatalogHomeTask11.Menu.MenuItem;
-import com.company.CatalogHomeTask11.Menu.ReturnToPreviousMenu;
-import com.company.CatalogHomeTask11.Menu.ShowDetailInformation;
 
 import java.util.Scanner;
 
-public class SubMenu  implements MenuItem {
+public class SubMenu  extends MainMenu {
 
-
+Catalog catalog;
     Scanner sc;
 
-    public SubMenu(Scanner sc) {
+    public SubMenu(Catalog catalog, Scanner sc) {
+        this.catalog = catalog;
         this.sc = sc;
-        subMenu = new MenuItem[]  {new ShowDetailInformation(), new ReturnToPreviousMenu()};
+        subMenu = new MenuItem[]  {new ShowDetailInformation(catalog, sc), new ReturnToPreviousMenu()};
     }
 
     MenuItem[] subMenu;
-
-
 
     public int checkInput() {
         while (true) {
