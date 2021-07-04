@@ -1,4 +1,4 @@
-package com.company.HomeTask12;
+package com.company.HomeTask12.Task1;
 
 import java.util.Arrays;
 

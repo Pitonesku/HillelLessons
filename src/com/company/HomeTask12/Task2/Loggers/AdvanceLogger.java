@@ -1,9 +1,9 @@
-package com.company.HomeTask12;
+package com.company.HomeTask12.Task2.Loggers;
 
 import java.util.Date;
 
 
-class AdvanceLogger implements Logger {
+public class AdvanceLogger implements Logger {
     public AdvanceLogger(Date date) {
         this.date = date;
     }

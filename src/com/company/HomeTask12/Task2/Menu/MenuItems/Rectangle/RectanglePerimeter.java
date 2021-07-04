@@ -1,4 +1,6 @@
-package com.company.HomeTask12;
+package com.company.HomeTask12.Task2.Menu.MenuItems.Rectangle;
+
+import com.company.HomeTask12.Task2.Menu.MenuItem;
 
 import java.util.Scanner;
 

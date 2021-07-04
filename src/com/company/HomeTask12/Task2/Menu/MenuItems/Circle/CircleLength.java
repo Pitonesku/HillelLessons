@@ -1,10 +1,12 @@
-package com.company.HomeTask12;
+package com.company.HomeTask12.Task2.Menu.MenuItems.Circle;
+
+import com.company.HomeTask12.Task2.Menu.MenuItem;
 
 import java.util.Scanner;
 
 import static java.lang.Math.PI;
 
-public class CircleLength implements MenuItem{
+public class CircleLength implements MenuItem {
     public CircleLength(Scanner sc) {
         this.sc = sc;
     }

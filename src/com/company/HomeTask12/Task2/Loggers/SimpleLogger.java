@@ -1,9 +1,9 @@
-package com.company.HomeTask12;
+package com.company.HomeTask12.Task2.Loggers;
 
 import java.util.Date;
 
 
-class SimpleLogger implements Logger {
+public class SimpleLogger implements Logger {
 
     public SimpleLogger(Date date) {
 

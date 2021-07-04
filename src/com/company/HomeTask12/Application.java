@@ -1,5 +1,19 @@
 package com.company.HomeTask12;
 
+import com.company.HomeTask12.Task2.Loggers.EmptyLogger;
+import com.company.HomeTask12.Task2.Menu.*;
+import com.company.HomeTask12.Task2.Menu.MenuItems.*;
+import com.company.HomeTask12.Task2.Menu.MenuItems.Circle.CircleLength;
+import com.company.HomeTask12.Task2.Menu.MenuItems.Circle.CircleSquare;
+import com.company.HomeTask12.Task2.Menu.MenuItems.Logger.AdvanceLoggerSelectionMenu;
+import com.company.HomeTask12.Task2.Menu.MenuItems.Logger.NoLogger;
+import com.company.HomeTask12.Task2.Menu.MenuItems.Logger.SimpleLoggerSelectionMenu;
+import com.company.HomeTask12.Task2.Menu.MenuItems.Rectangle.RectanglePerimeter;
+import com.company.HomeTask12.Task2.Menu.MenuItems.Rectangle.RectangleSquare;
+import com.company.HomeTask12.Task2.Loggers.AdvanceLogger;
+import com.company.HomeTask12.Task2.Loggers.Logger;
+import com.company.HomeTask12.Task2.Loggers.SimpleLogger;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -8,24 +22,45 @@ import java.util.Scanner;
 public class Application {
 
     static Logger loggerInUse;
-    static  Logger advanceLogger;
+
+    public static Logger getAdvanceLogger() {
+        return advanceLogger;
+    }
+
+    public static Logger getSimpleLogger() {
+        return simpleLogger;
+    }
+
+    static Logger advanceLogger;
     static Logger simpleLogger;
 
+
+    public static void setLoggerInUse(Logger logger){
+        loggerInUse = logger;
+    }
 
 
     public static void main(String[] args) {
 
         Date date = new Date();
-        advanceLogger = new AdvanceLogger(date);
-        simpleLogger = new SimpleLogger(date);
-
-
-
-
-
         Scanner sc = new Scanner(System.in);
+
         //Creating exitMenu;
         MenuItem exitMenu = new ExitMenu();
+
+        simpleLogger = new SimpleLogger(date);
+        advanceLogger = new AdvanceLogger(date);
+        loggerInUse = new EmptyLogger(date);
+
+
+        //Creating logger selection menu.
+       List<MenuItem> loggers = new ArrayList<>();
+       loggers.add(new AdvanceLoggerSelectionMenu());
+       loggers.add(new SimpleLoggerSelectionMenu());
+       loggers.add(new NoLogger());
+      // loggers.add(exitMenu);
+       ShowOneTimeMenu loggerSelection = new ShowOneTimeMenu(loggers, "Logger selection menu", sc, loggerInUse);
+       loggerSelection.run();
 
 
         //Creating menu for circle;
@@ -42,14 +77,6 @@ public class Application {
         rectangle.add(exitMenu);
         Menu rectangleMenu = new Menu(rectangle, "Rectangle calculation", sc, loggerInUse);
 
-        //Creating logger selection menu.
-
-        List<MenuItem> loggers = new ArrayList<>();
-        loggers.add(new AdvanceLoggerSelectionMenu());
-        loggers.add(new SimpleLoggerSelectionMenu());
-        loggers.add(new NoLogger());
-        loggers.add(exitMenu);
-        Menu loggerSelection = new Menu(loggers, "Logger selection menu", sc, loggerInUse);
 
         // Creating main menu
         List<MenuItem> mainMenuList = new ArrayList<>();
@@ -59,9 +86,7 @@ public class Application {
         Menu mainMenu = new Menu(mainMenuList, "Main menu", sc, loggerInUse);
 
 
-        loggerSelection.run();
         mainMenu.run();
-
 
     }
 }
